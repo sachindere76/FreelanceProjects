@@ -1,0 +1,68 @@
+
+Requirements :
+  Ex : http://www.corp.att.com/attconnectsupport (URLS are different)
+       Starting from http
+       Delimiter is Enter
+       
+		Java program to search through the xml files for URLs and insert into a 
+	  	delimited text file that is saved back to the Docbase.
+	    We need to search through directories in Unix Path is /data/web/absweb/ABS_EM/persistent	
+	    Inside there are around 900 xml files..
+		We need search inside these xml files and find all urls's in that
+		and insert those to text file saved back to docbase that text file with result..
+		complete url to text file..Yes..
+
+Steps :
+
+	1) Search for a directory recursively in Unix using Java
+	2) Grab all the XML files and store them in Memory
+	3) Extract all URLs from these XML files using Search API etc  
+	4) write them to the text file
+	4) Save the Text file in the same document base
+ 
+
+Software Requirements :
+   1) Please make sure you have latest Java6 onwards installed in your machine. Java 8 is the best
+   
+ How to run the Program :  
+   1) Open Command Line and Type java -version and make Java 7 or Java8 is installed.
+   2) Go to the directory where ExtractURLs.jar is located from Command Line
+   3) Place config.properties in the same folder. This Step is very important.The Program will not run if this Step is not followed
+   			filePath        = /data/web/absweb/ABS_EM/persistent
+		  outputFilePath    = /data/web/absweb/ABS_EM/persistent
+		  outputFileName    = urls
+		  fileExt           = .txt
+   3) Type ./ExtractURLs.jar to run the Program
+    
+   
+    
+
+
+/** Utility to search XML Files and extract URL
+ * 
+ * Things done :
+ * 		  1) Read the XML Files one by one and extract the URLs from the files  approx 900 XML Files : Done
+		  2) Use Parser to extract the URLs : Done
+		  3) store the URLs in a List : Done
+		  4) Print the URLs in a textfile : Done. 
+		  5) Store the URLs in a delimited text file : Done 
+		  6) Outputfile is saved as currentdateurls.txt.ex 2016-09-29urls.txt 
+		  7) Please use config.properties to update the following 
+		  			filePath        = /data/web/absweb/ABS_EM/persistent
+					outputFilePath  = /data/web/absweb/ABS_EM/persistent
+					outputFileName  = urls
+					fileExt         = .txt
+		  
+		  			
+ * 
+ * TODO : 
+ * 		  1) Fix Delimitier for files which have multiple URLS.: DONE
+ * 		  2) TEST : test the no of URLs in a file : WIP
+ * 		  3) Print all the URLs in a textfile. : DONE
+          4) Cater for Duplicate URLS? : TODO?
+ * 
+		  		  
+   things to Note :
+  		  1) XML Content may change
+		  2) Memory Leaks	    		
+ */ 
