@@ -1,3 +1,6 @@
+	
+This is a utility Program which will search a directory recursively in Java on Unix/Solaris Machine for XML Files
+
 
 Requirements :
   Ex : http://www.corp.att.com/attconnectsupport (URLS are different)
@@ -66,3 +69,12 @@ Software Requirements :
   		  1) XML Content may change
 		  2) Memory Leaks	    		
  */ 
+ 
+ 
+ Issues :
+  1) http://crunchify.com/exception-in-thread-main-java-lang-unsupportedclassversionerror-comcrunchifymain-unsupported-major-minor-version-51-0/
+  2) http://javarevisited.blogspot.my/2015/05/fixing-unsupported-majorminor-version.html
+  
+ 
+ 
+ 
