@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE log SYSTEM "logger.dtd">
+<log>
+<record>
+  <date>2016-10-11T23:39:06</date>
+  <millis>1476200346982</millis>
+  <sequence>0</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>loadConfig</method>
+  <thread>10</thread>
+  <message>********** Loading Configurations **********</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347030</millis>
+  <sequence>1</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>loadConfig</method>
+  <thread>10</thread>
+  <message>*** Config File found in Path: /home/sachin/workspaceFreelanceProjects/ExtractURLUtility</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347040</millis>
+  <sequence>2</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>Searching directory for XML Files ... /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347041</millis>
+  <sequence>3</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>*** Adding File to the list :connect12.xml***</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347042</millis>
+  <sequence>4</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>*** Adding File to the list :connect.xml***</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347042</millis>
+  <sequence>5</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>*** Adding File to the list :connect1.xml***</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347043</millis>
+  <sequence>6</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>*** Adding File to the list :connect2.xml***</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347043</millis>
+  <sequence>7</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message>*** Adding File to the list :connect3.xml***</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347044</millis>
+  <sequence>8</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>search1</method>
+  <thread>10</thread>
+  <message> List of XML FILES found : [connect12.xml, connect.xml, connect1.xml, connect2.xml, connect3.xml]</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347044</millis>
+  <sequence>9</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>
+ Total No of Files Found 5</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347045</millis>
+  <sequence>10</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** XML FIle Found : 5 connect12.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347045</millis>
+  <sequence>11</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** Now Processing XML File : 5 /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile/connect12.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347115</millis>
+  <sequence>12</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** XML FIle Found : 6 connect.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347115</millis>
+  <sequence>13</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** Now Processing XML File : 6 /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile/connect.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347130</millis>
+  <sequence>14</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** XML FIle Found : 7 connect1.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347131</millis>
+  <sequence>15</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** Now Processing XML File : 7 /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile/connect1.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347165</millis>
+  <sequence>16</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** XML FIle Found : 8 connect2.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347171</millis>
+  <sequence>17</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** Now Processing XML File : 8 /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile/connect2.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347180</millis>
+  <sequence>18</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** XML FIle Found : 9 connect3.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347180</millis>
+  <sequence>19</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>*** Now Processing XML File : 9 /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile/connect3.xml</message>
+</record>
+<record>
+  <date>2016-10-11T23:39:07</date>
+  <millis>1476200347189</millis>
+  <sequence>20</sequence>
+  <logger>com.sachin.filesearch.ExtractURLUtility</logger>
+  <level>INFO</level>
+  <class>com.sachin.filesearch.ExtractURLUtility</class>
+  <method>main</method>
+  <thread>10</thread>
+  <message>****** URLs has been outputted to : /home/sachin/Desktop/FreeLancerProjects/ExtractURLFromXMLFile with total URLS : 10 ******* </message>
+</record>
+</log>
