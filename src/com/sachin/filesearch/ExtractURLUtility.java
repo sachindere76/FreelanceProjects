@@ -9,6 +9,9 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 import java.util.Properties;
+import java.util.logging.FileHandler;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 import org.apache.commons.lang.StringUtils;
 
@@ -23,10 +26,14 @@ import com.sachin.xmlutility.XMLParser;
  * URLs in a textfile : Done. 5) Store the URLs in a delimited text file : Done
  * 
  * 
- * TODO : 1) Fix Delimitier for files which have multiple URLS. : Done 2) TEST :
- * test the no of URLs in a file : TODO approx 900 3) Load config from
- * Properties : DONE 4) Print all the URLs in a textfile. : DONE 5) Print
- * outputfile with time : DONE 6) Config Properties not found : WIP
+ * TODO : 1) Fix Delimitier for files which have multiple URLS. : Done 
+ * 		  2) TEST :  test the no of URLs in a file approx 900
+ * 		  3) Load config from Properties : DONE 
+ * 		  4) Print all the URLs in a textfile. : DONE
+ * 		  5) Print outputfile with time : DONE 
+ * 		  6) Add Logging
+ *        7) XML Files are 1390 globe.xml (with space)
+ * 
  * 
  * 
  * things to Note : 1) XML Content may change 2) Memory Leaks
@@ -46,11 +53,17 @@ public class ExtractURLUtility {
 	public static String outputFilePath = "";
 	public static String outputFileName = "";
 	public static String fileExt = "";
+	private static final Logger logger = Logger.getLogger( ExtractURLUtility.class.getName() );
+	private static FileHandler fh = null;
 
-	public static void loadConfig() {
+	public static void loadConfig() throws IOException {
 		Properties prop = new Properties();
 		InputStream input = null;
-		System.out.println("********** Loading Configurations **********");
+		fh = new FileHandler("ExtractURLUtilityLog.txt");
+		logger.addHandler(fh);
+		// Request that every detail gets logged.
+        logger.setLevel(Level.ALL);
+		logger.info("********** Loading Configurations **********");
 		try {
 
 			File jarPath = new File(
@@ -58,8 +71,9 @@ public class ExtractURLUtility {
 			 //Both Works
 			// String propertiesPath=jarPath.getParentFile().getAbsolutePath();
 			String propertiesPath = jarPath.getParent();
-			System.out.println("*** propertiesPath-" + propertiesPath + "***");
+			logger.info("*** Config File found in Path: " + propertiesPath);
 			prop.load(new FileInputStream(propertiesPath + "/config.properties"));
+			
 		} catch (IOException e1) {
 			e1.printStackTrace();
 		}
@@ -101,7 +115,7 @@ public class ExtractURLUtility {
 		try {
 			ExtractURLUtility.loadConfig();
 		} catch (Exception e) {
-			System.out.println("**** Exception caught : " + e.getMessage() + "****");
+			logger.log(Level.SEVERE,"**** Exception caught : " + e.getMessage() + "****");
 		}
 
 	}
@@ -115,20 +129,22 @@ public class ExtractURLUtility {
 		String fileName = "";
 		fileSearch.searchDirectory1(new File(filePath));
 		count = fileSearch.getResult().size();
-		if (count == 0) {
-			System.out.println("\nNo result found!");
+		if (count == 0 || count < 1) {
+			logger.info("\n ********* No URLs found in the XML Files! No Files outputted! ******** ");
 		} else {
-			System.out.println("\n Total No of Files Found " + count); // Tested
+			logger.info("\n Total No of Files Found " + count); // Tested
 			for (String matched : fileSearch.getResult()) {
-				System.out.println("*** XML FIle Found : " + count + " " + matched);
+				
+				logger.info("*** XML FIle Found : " + count + " " + matched);
 				fileName = matched;
-				System.out
-						.println("*** Now Processing XML File : " + count + " " + filePath + File.separator + fileName);
+				logger.info("*** Now Processing XML File : " + count + " " + filePath + File.separator + fileName);
 				File file = new File(filePath + File.separator + fileName);
 				parser.extractUrls(file);
+				count = count + 1;
 			}
+			logger.info("****** URLs has been outputted to : " + filePath + " with total URLS : " + count + " ******* ");
 		}
-		System.out.println(" URL File has been outputted to : " + filePath + " with total URLS : " + count);
+		
 
 	}
 
@@ -144,7 +160,7 @@ public class ExtractURLUtility {
 		if (directory.isDirectory()) {
 			return search1(directory);
 		} else {
-			System.out.println(directory.getAbsoluteFile() + " is not a directory!");
+			logger.log(Level.WARNING,directory.getAbsoluteFile() + " is not a directory!");
 			return null;
 		}
 	}
@@ -158,19 +174,19 @@ public class ExtractURLUtility {
 	private List<String> search1(File file) {
 
 		if (file.isDirectory()) {
-			System.out.println("Searching directory for XML Files ... " + file.getAbsoluteFile());
+			logger.info("Searching directory for XML Files ... " + file.getAbsoluteFile());
 
 			// do you have permission to read this directory?
 			if (file.canRead()) {
 				for (File temp : file.listFiles()) {
 					if (temp.isDirectory()) { // If it is a directory, do a
 												// recursive Search
-						System.out.println("********" + temp + " is a Directory. Doing a Recursive Search ********");
+						logger.info("********" + temp + " is a Directory. Doing a Recursive Search ********");
 						search1(temp);
 					} else {
 						// Add only XML FIles
 						if (temp.isFile() && getFileExtensionName(temp).indexOf("xml") != -1) {
-							System.out.println("*** Adding File to the list :" + temp.getName() + "***");
+							logger.info("*** Adding File to the list :" + temp.getName() + "***");
 							// result.add(temp.getAbsoluteFile().toString());
 							// //Add the files
 							result.add(temp.getName()); // Add the files
@@ -180,10 +196,10 @@ public class ExtractURLUtility {
 				}
 
 			} else {
-				System.out.println(file.getAbsoluteFile() + "Permission Denied");
+				logger.log(Level.WARNING,file.getAbsoluteFile() + "Permission Denied");
 			}
 
-			System.out.println(" List of XML FILES found : " + result.toString());
+			logger.info(" List of XML FILES found : " + result.toString());
 
 		}
 

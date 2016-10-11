@@ -28,6 +28,7 @@ public class XMLParser {
 	ArrayList<String> listUrls = new ArrayList<String>();
 	int totalCount             = 0; //URL Count	
 	String outputFile          = null;
+	boolean fileOutput        = false;
 	
 	public void extractUrls(File file) {
 		try {
@@ -50,44 +51,26 @@ public class XMLParser {
 						// Returns a list with all links contained in the input
 						listUrls    = (ArrayList<String>) PatternClass.extractUrls(text);						
 					}					
-					outputToFile(listUrls);			
+					fileOutput = outputToFile(listUrls);
+					
 			} else {
 				System.out.println(" No URLS found in the XML File : " + file.getName());
+				
 			}
 				
 		} catch (IOException ie) {
 			System.out.println("IO Exception caught : " + ie.getMessage() + " Please contact the author at sachindere76@gmail.com ");
+			fileOutput = false;
 		} catch (Exception e) {
 			System.out.println("Exception caught : " + e.getMessage() + " Please contact the author at sachindere76@gmail.com ");
+			fileOutput = false;
 		} 
 	}
 	
-	/**
-	 * Update File instead
-	 * @param data
-	 * @throws IOException
-	 */
-//	public void outputToFile(Hashtable<Integer, String> data) throws IOException {
-//		
-//		if (!data.isEmpty()) {						
-//			FileWriter writer = new FileWriter(outputFile,true); //File opened in Append Mode
-//			//TODO Bug Here
-//	        List<String> list = new ArrayList<String>(data.values());
-//	        System.out.println(" Outputting to the file : " + list.toString()); //Bug Here
-//	        //Open the File again for writing
-//	        
-//			CSVUtils.writeLine(writer, list);		
-//		    System.out.println( outputFile + " written  with " + list.size() + " URLS"); // Bug Here
-//		    //Very important to flush and close the file
-//		    writer.flush();
-//		    writer.close();
-//		} else {
-//			System.out.println(" Nothing to write ");
-//		}
-//
-//	}
 
-	public void outputToFile(ArrayList<String> data) throws IOException {
+
+	public boolean outputToFile(ArrayList<String> data) throws IOException {
+		boolean filesOk = false;
 		
 		if (!data.isEmpty()) {	
 			if(StringUtils.isNotEmpty(ExtractURLUtility.outputFilePath) && StringUtils.isNotEmpty(ExtractURLUtility.fileExt)) {
@@ -99,14 +82,16 @@ public class XMLParser {
 			FileWriter writer = new FileWriter(outputFile,true); //File opened in Append Mode
 			System.out.println(" Outputting to the file : " + data.toString()); 
 	        CSVUtils.writeLine(writer, data);		
-		    System.out.println( outputFile + " written  with " + data.size() + " URLS"); 
+		    System.out.println( outputFile + " written  with " + data.size() + " URLS");
+		    filesOk = true;
 		    //Very important to flush and close the file
 		    writer.flush();
 		    writer.close();
 		} else {
 			System.out.println(" Nothing to write ");
+			filesOk = false;
 		}
-
+		return filesOk;
 	}
 
 	
